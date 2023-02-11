@@ -2,19 +2,6 @@ window.addEventListener('load', function() {
 	mapchar("mapchar");
 	function mapchar(mapchar) {
 		var canvas = document.getElementById(mapchar);
-		var getPixelRatio = function(context) {
-			var backingStore = context.backingStorePixelRatio ||
-				context.webkitBackingStorePixelRatio ||
-				context.mozBackingStorePixelRatio ||
-				context.msBackingStorePixelRatio ||
-				context.oBackingStorePixelRatio ||
-				context.backingStorePixelRatio || 1;
-			return (window.devicePixelRatio || 1) / backingStore;
-		};
-		const pixelRatio = getPixelRatio(canvas);
-		// 设置canvas的真实宽高
-		canvas.width = pixelRatio * canvas.offsetWidth;
-		canvas.height = pixelRatio * canvas.offsetHeight;
 		var canvasW = canvas.width
 		var canvasH = canvas.height
 		var geoCenterX = 0,

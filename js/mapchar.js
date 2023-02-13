@@ -1,18 +1,24 @@
 window.addEventListener('load', function() {
 	mapchar("mapchar");
+
 	function mapchar(mapchar) {
 		var canvas = document.getElementById(mapchar);
 		var canvasW = canvas.width
 		var canvasH = canvas.height
 		var geoCenterX = 0,
 			geoCenterY = 0 // 地图区域的经纬度中心点
-		var geoData = [];//绘制地图需要的数据
+		var geoData = []; //绘制地图需要的数据
 		var ctx = canvas.getContext('2d')
-		var selectvalue = "StringencyIndex_Average";//选择值
-		
-		var jsonData = [];//csv文件数据
-		var titleText = "严格指数";//标题,默认为严格指数
-		var dateNum="20200101"//日期数字,默认为20200101
+		var selectvalue = "StringencyIndex_Average"; //选择值
+		//==========模糊处理===================
+		canvas.width = 640 * 2;
+		canvas.height = 500 * 2;
+		canvas.style.width = 640 + "px";
+		canvas.style.height = 500 + "px";
+		ctx.scale(2, 2);
+		var jsonData = []; //csv文件数据
+		var titleText = "严格指数"; //标题,默认为严格指数
+		var dateNum = "20200101" //日期数字,默认为20200101
 		//==================解析csv文件=======================
 		$.ajax({
 			type: 'GET',
@@ -29,6 +35,7 @@ window.addEventListener('load', function() {
 		});
 		//保证在绘制地图之前拿到csv文件数据
 		init()
+
 		function init() {
 			var request = new XMLHttpRequest()
 			request.open('get', 'https://geojson.cn/api/data/china.json')
@@ -175,7 +182,7 @@ window.addEventListener('load', function() {
 				for (var a = 0; a < jsonData.length; a++) {
 					if (getEnglish(dataArr[i].properties.name) == jsonData[a].RegionName && jsonData[a]
 						.Date == dateNum) {
-							//将选择的数据映射成相应的颜色,以对象方式添加到jsonData
+						//将选择的数据映射成相应的颜色,以对象方式添加到jsonData
 						if (jsonData[a][selectvalue] == 0) {
 							dataArr[i].properties.color = '#7bb8b8'
 						} else if (jsonData[a][selectvalue] > 0 && jsonData[a][selectvalue] < 25) {
@@ -189,7 +196,7 @@ window.addEventListener('load', function() {
 						}
 					}
 				}
-				
+
 				dataArr[i].geometry.coordinates.forEach(area => {
 					ctx.save()
 					ctx.beginPath()
@@ -217,6 +224,7 @@ window.addEventListener('load', function() {
 		var titleText = document.querySelector("#titleText");
 		for (var q = 0; q < radios.length; q++) {
 			radios[q].addEventListener("click", setvalue)
+
 			function setvalue() {
 				selectvalue = this.value;
 				var title = ""
@@ -240,9 +248,9 @@ window.addEventListener('load', function() {
 				drawMap()
 			}
 		}
-		var date=document.querySelector("#inputDate");
-		date.addEventListener("change",function(){
-			dateNum=date.value.replace(/\-/g, "")
+		var date = document.querySelector("#inputDate");
+		date.addEventListener("change", function() {
+			dateNum = date.value.replace(/\-/g, "")
 			init()
 			drawMap()
 		})
@@ -255,7 +263,7 @@ window.addEventListener('load', function() {
 				ctx.beginPath()
 				ctx.translate(centerX, centerY) // 将画笔移至画布的中心
 				ctx.fillStyle = '#fff'
-				ctx.font = '10px Microsoft YaHei'
+				ctx.font = '12px Microsoft YaHei'
 				ctx.textAlign = 'center' //字体居中
 				ctx.textBaseLine = 'center' //基线居中
 				var x = 0,

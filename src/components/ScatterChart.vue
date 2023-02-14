@@ -1,5 +1,5 @@
 <template>
-    <h>饼图</h>
+    <h>散点图</h>
 </template>
 
 <script></script>

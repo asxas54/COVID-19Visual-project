@@ -1,11 +1,11 @@
 <template>
-    <h>饼图</h>
+    <h>地图</h>
 </template>
 
 <script></script>
 
 <style>
-h{
-    color:white;
-}
+    h{
+        color:white;
+    }
 </style>

@@ -7,12 +7,23 @@
       <div id="left_up" class="grid">
         <PieChart></PieChart>
       </div>
-      <div id="middle_up" class="grid"></div>
-      <div id="right_up" class="grid">
-        <LineChart :csvdata="csvdata()"></LineChart>
+      <div id="middle_up" class="grid">
+        <MapChart></MapChart>
       </div>
-      <div id="left_down" class="grid"></div>
-      <div id="middle_down" class="grid"></div>
+      <div id="right" class="grid">
+        <div id="right_up">
+          <LineChart :csvdata="csvdata()"></LineChart>
+        </div>
+        <div id="right_down">
+          <TimeLine></TimeLine>
+        </div>
+      </div>
+      <div id="left_down" class="grid">
+        <ScatterChart></ScatterChart>
+      </div>
+      <div id="middle_down" class="grid">
+        <BarChart></BarChart>
+      </div>
     </div>
   </div>
 </template>
@@ -21,26 +32,18 @@
 
 <script >
 import PieChart from "./components/PieChart.vue";
+import ScatterChart from "./components/ScatterChart.vue";
+import MapChart from "./components/MapChart.vue";
+import BarChart from "./components/BarChart.vue";
 import LineChart from "./components/LineChart.vue";
-// import { VueCsvImport } from 'vue-csv-import';
+import TimeLine from "./components/TimeLine.vue";
 import csv from './data/OxCGRT_CHN_latest - 2-6.csv'
-// 类型为object
-// console.log(typeof csv);
-// console.log(csv[1864]);
-// console.log(csv[2228]);
+// csv类型为object，this.csvdata()可以调用数据
+
 // 导入子组件
 export default {
-  // setup() {
-  //   const csvdata = csv;
-  //   return {
-  //     csvdata
-  //   }
-  // },
-  components: { PieChart, LineChart },
+  components: { PieChart, ScatterChart, MapChart, BarChart, LineChart, TimeLine },
   mounted() {
-    // console.log(csv);
-    // 1866 2230
-    // console.log(this.csvdata());
   },
   methods: {
     csvdata() {
@@ -84,10 +87,9 @@ html,body,#app{
   height: 50%;
   left: 5%;
 }
-#right_up{
+#right{
   width: 25%;
   height: 94%;
-  /* margin-right: 2%; */
   float: right;
   right: 2%;
 }
@@ -106,7 +108,6 @@ html,body,#app{
 .grid{
   border: 2px solid white;
   border-radius: 25px;
-  /* margin: 1%; */
   float: left;
   background-color: rgb(255, 255, 255, 0.1);
   position: relative;

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    canvas {
+      /*border: 1px solid black;*/
+      margin: 0 auto;
+      display: block;
+      background-color: #AAAAAA;
+    }
+    #title{
+
+    }
+  </style>
+</head>
+<body>
+<canvas id="title" width="540" height="100"></canvas>
+<canvas id="school" width="540" height="100"></canvas>
+<canvas id="work" width="540" height="200"></canvas>
+
+<script>
+  const canvas_title = document.getElementById("title");
+  const ctx_title = canvas_title.getContext("2d");
+
+  // 画标题
+  ctx_title.font = "bold 18px Arial";
+  ctx_title.textAlign = "center";
+  ctx_title.fillStyle = "white";
+  ctx_title.fillText("北京2022年政策追踪", canvas_title.width / 2, 24);
+
+  // 颜色提示
+  ctx_title.beginPath();
+  ctx_title.moveTo(0, 25);
+  ctx_title.lineTo(30, 25);
+  ctx_title.strokeStyle = "green";
+  ctx_title.lineWidth = 4;
+  ctx_title.font = "14px Arial";
+  ctx_title.fillText("等级0，无措施", 80, 30);
+  ctx_title.stroke();
+
+  ctx_title.beginPath();
+  ctx_title.moveTo(0, 25+20);
+  ctx_title.lineTo(30, 25+20);
+  ctx_title.strokeStyle = "yellow";
+  ctx_title.lineWidth = 4;
+  ctx_title.font = "14px Arial";
+  ctx_title.fillText("等级1，建议措施", 87, 30+20);
+  ctx_title.stroke();
+
+  ctx_title.beginPath();
+  ctx_title.moveTo(0, 25+40);
+  ctx_title.lineTo(30, 25+40);
+  ctx_title.strokeStyle = "red";
+  ctx_title.lineWidth = 4;
+  ctx_title.font = "14px Arial";
+  ctx_title.fillText("等级2，部分强制", 87, 30+40);
+  ctx_title.stroke();
+
+  ctx_title.beginPath();
+  ctx_title.moveTo(0, 25+60);
+  ctx_title.lineTo(30, 25+60);
+  ctx_title.strokeStyle = "black";
+  ctx_title.lineWidth = 4;
+  ctx_title.font = "14px Arial";
+  ctx_title.fillText("等级3，完全强制", 87, 30+60);
+  ctx_title.stroke();
+</script>
+
+<script>
+  const canvas_school = document.getElementById("school");
+  const ctx_school = canvas_school.getContext("2d");
+
+  // 直线含义
+  ctx_school.font = "16px Arial";
+  ctx_school.fillStyle = "white";
+  ctx_school.fillText("学校关闭政策", 0, 55);
+
+  // 画直线1.1
+  ctx_school.beginPath();
+  ctx_school.moveTo(110, 50);
+  ctx_school.lineTo((canvas_school.width-110)/4+110, 50);
+  ctx_school.strokeStyle = "yellow";
+  ctx_school.lineWidth = 3;
+  ctx_school.stroke();
+
+  // 画直线1.2
+  ctx_school.beginPath();
+  ctx_school.moveTo((canvas_school.width-110)/4+110, 50);
+  ctx_school.lineTo(canvas_school.width, 50);
+  ctx_school.strokeStyle = "red";
+  ctx_school.stroke();
+
+  // 画空心小圆-20220101
+  // 为了擦除空心小圆里面的直线，需要先把空心小圆包含的区域涂成背景色（一般是白色），再重新画一个空心小圆
+  ctx_school.beginPath();
+  ctx_school.arc(110, 50, 6, 0, 2 * Math.PI, false);
+  ctx_school.fillStyle = "black";
+  ctx_school.fill();
+
+  ctx_school.beginPath();
+  ctx_school.arc(110, 50, 4, 0, 2 * Math.PI, false);
+  ctx_school.lineWidth = 1;
+  ctx_school.strokeStyle = "white";
+  ctx_school.stroke();
+
+  // 画空心小圆-20220314大概四分之一
+  ctx_school.beginPath();
+  ctx_school.arc((canvas_school.width-110)/4+110, 50, 6, 0, 2 * Math.PI, false);
+  ctx_school.fill();
+
+  ctx_school.beginPath();
+  ctx_school.arc((canvas_school.width-110)/4+110, 50, 4, 0, 2 * Math.PI, false);
+  ctx_school.stroke();
+
+  // 画竖直的16px的直线
+  ctx_school.beginPath();
+  ctx_school.moveTo(110, 50+4);
+  ctx_school.lineTo(110, 50+20);
+  ctx_school.stroke();
+
+  ctx_school.beginPath();
+  ctx_school.moveTo((canvas_school.width-110)/4+110, 50-4);
+  ctx_school.lineTo((canvas_school.width-110)/4+110, 50-20);
+  ctx_school.stroke();
+
+  //政策调整
+  ctx_school.font = "12px Arial";
+  ctx_school.fillStyle = "white";
+  ctx_school.fillText("1月1日学校建议关闭", 60, 80);
+
+  ctx_school.fillText("3月14日某些级别学校要求关闭", (canvas_school.width-110)/4+40, 25);
+</script>
+
+<script>
+  const canvas_work = document.getElementById("work");
+  const ctx_work = canvas_work.getContext("2d");
+
+  // 直线含义
+  ctx_work.font = "16px Arial";
+  ctx_work.fillStyle = "white";
+  ctx_work.fillText("办公场所政策", 0, 55);
+
+  // 画直线1.1
+  ctx_work.beginPath();
+  ctx_work.moveTo(110, 50);
+  // ctx_work.lineTo((canvas_work.width-110)/4+110, 50);
+  ctx_work.lineTo(canvas_work.width-(canvas_work.width-110)/12, 50);
+  ctx_work.strokeStyle = "red";
+  ctx_work.lineWidth = 3;
+  ctx_work.stroke();
+
+  // 画直线1.2
+  ctx_work.beginPath();
+  ctx_work.moveTo(canvas_work.width-(canvas_work.width-110)/12, 50);
+  ctx_work.lineTo(canvas_work.width, 50);
+  ctx_work.strokeStyle = "yellow";
+  ctx_work.stroke();
+
+  // 画空心小圆-20220101
+  // 为了擦除空心小圆里面的直线，需要先把空心小圆包含的区域涂成背景色（一般是白色），再重新画一个空心小圆
+  ctx_work.beginPath();
+  ctx_work.arc(110, 50, 6, 0, 2 * Math.PI, false);
+  ctx_work.fillStyle = "black";
+  ctx_work.fill();
+
+  ctx_work.beginPath();
+  ctx_work.arc(110, 50, 4, 0, 2 * Math.PI, false);
+  ctx_work.lineWidth = 1;
+  ctx_work.strokeStyle = "white";
+  ctx_work.stroke();
+
+  // 画空心小圆-20220314大概四分之一
+  ctx_work.beginPath();
+  ctx_work.arc(canvas_work.width-(canvas_work.width-110)/12, 50, 6, 0, 2 * Math.PI, false);
+  ctx_work.fill();
+
+  ctx_work.beginPath();
+  ctx_work.arc(canvas_work.width-(canvas_work.width-110)/12, 50, 4, 0, 2 * Math.PI, false);
+  ctx_work.stroke();
+
+  // 画竖直的16px的直线
+  ctx_work.beginPath();
+  ctx_work.moveTo(110, 50+4);
+  ctx_work.lineTo(110, 50+20);
+  ctx_work.stroke();
+
+  ctx_work.beginPath();
+  ctx_work.moveTo(canvas_work.width-(canvas_work.width-110)/12, 50-4);
+  ctx_work.lineTo(canvas_work.width-(canvas_work.width-110)/12, 50-20);
+  ctx_work.stroke();
+
+  //政策调整
+  ctx_work.font = "12px Arial";
+  ctx_work.fillStyle = "white";
+  ctx_work.fillText("1月1日部分岗位在家办公", 60, 80);
+
+  ctx_work.fillText("12月22日建议在家办公", canvas_work.width-(canvas_work.width-110)/12-90, 25);
+</script>
+
+
+
+</body>
+
+</html>

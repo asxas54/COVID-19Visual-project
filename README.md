@@ -1,3 +1,7 @@
+# csv数据引用
+App.vue this.csvdata()可以调用数据，用Props属性传递给子组件
+参考 https://cn.vuejs.org/guide/components/props.html
+
 # myMap
 
 This template should help get you started developing with Vue 3 in Vite.

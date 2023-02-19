@@ -162,10 +162,10 @@ window.addEventListener('load', function() {
                     //      ctx.rotate(-Math.PI/2);
                     //      ctx.fillStyle = "white";
                     //      ctx.fillText("确诊人数", -canvas.height/2, cSpace-10);
-                    //      ctx.restore();
-                    //      // 绘制标题 x
-                    //      ctx.fillStyle = "white";
-                    //      ctx.fillText("省份", originX+cWidth/2, originY+cSpace/1);
+                         ctx.restore();
+                         // 绘制标题 x
+                         ctx.fillStyle = "white";
+                         ctx.fillText("省份", originX+cWidth/2, originY+cSpace/1);
         
                     //      //柱形图描述
                     //      ctx.fillStyle = "white";

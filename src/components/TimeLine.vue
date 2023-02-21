@@ -251,7 +251,7 @@ export default {
         // ctx_work.arc(canvas_work.width-(canvas_work.width-110)/12, 50, 4, 0, 2 * Math.PI, false);
         // ctx_work.stroke();
 
-        console.log(this.regionName);
+        // console.log(this.regionName);
         if(this.regionName=="北京市"){
           // 画竖直的16px的直线
           ctx_work.beginPath();

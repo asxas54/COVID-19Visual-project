@@ -2,9 +2,9 @@
 
     <canvas id="barChart" height="300" width="600" ></canvas>
         <div class="radios">
-			<label><input type="radio" checked name="target" id="target"
+			<label><input type="radio" checked name="target" id="target_2"
 					value="Confirmed_cases" />确诊人数</label><br />
-			<label><input type="radio" checked name="target" id="target"
+			<label><input type="radio" checked name="target" id="target_2"
 					value="Death_cases" />死亡人数</label><br />
 		</div>
         <div class="text">
@@ -162,10 +162,10 @@ window.addEventListener('load', function() {
                     //      ctx.rotate(-Math.PI/2);
                     //      ctx.fillStyle = "white";
                     //      ctx.fillText("确诊人数", -canvas.height/2, cSpace-10);
-                    //      ctx.restore();
-                    //      // 绘制标题 x
-                    //      ctx.fillStyle = "white";
-                    //      ctx.fillText("省份", originX+cWidth/2, originY+cSpace/1);
+                         ctx.restore();
+                         // 绘制标题 x
+                         ctx.fillStyle = "white";
+                         ctx.fillText("省份", originX+cWidth/2, originY+cSpace/1);
         
                     //      //柱形图描述
                     //      ctx.fillStyle = "white";
@@ -220,7 +220,7 @@ window.addEventListener('load', function() {
     
             goBarChart( [["福建", 1], ["北京", 13], ["广东", 8], ["广西", 2], ["河南", 23], ["河北", 7], ["湖南", 4], ["辽宁", 2]])
     
-            var radios = document.querySelectorAll("#target");
+            var radios = document.querySelectorAll("#target_2");
             // var ytext = document.getElvementById("ytext");
              var bartext = document.getElementById("bartext");
         

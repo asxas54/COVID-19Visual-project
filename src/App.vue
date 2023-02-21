@@ -11,12 +11,7 @@
         <MapChart></MapChart>
       </div>
       <div id="right" class="grid">
-        <div id="right_up">
-          <LineChart :csvdata="csvdata()"></LineChart>
-        </div>
-        <div id="right_down">
-          <TimeLine></TimeLine>
-        </div>
+        <rightPart :csvdata="csvdata()"></rightPart>
       </div>
       <div id="left_down" class="grid">
         <ScatterChart></ScatterChart>
@@ -35,14 +30,14 @@ import PieChart from "./components/PieChart.vue";
 import ScatterChart from "./components/ScatterChart.vue";
 import MapChart from "./components/MapChart.vue";
 import BarChart from "./components/BarChart.vue";
-import LineChart from "./components/LineChart.vue";
-import TimeLine from "./components/TimeLine.vue";
+import rightPart from "./components/rightPart.vue";
+
 import csv from './data/OxCGRT_CHN_latest - 2-6.csv'
 // csv类型为object，this.csvdata()可以调用数据
 
 // 导入子组件
 export default {
-  components: { PieChart, ScatterChart, MapChart, BarChart, LineChart, TimeLine },
+  components: { PieChart, ScatterChart, MapChart, BarChart, rightPart},
   mounted() {
   },
   methods: {

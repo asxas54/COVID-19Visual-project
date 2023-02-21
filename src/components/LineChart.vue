@@ -1,12 +1,4 @@
 <template>
-    <div class="dropdown">
-        <button class="dropbtn">{{displayName}}</button>
-        <div class="dropdown-content">
-            <button @click="cityChange('Shanghai')">上海市</button>
-            <button @click="cityChange('Guangdong')">广东市</button>
-            <button @click="cityChange('Chongqing')">重庆市</button>
-        </div>
-    </div>
     <div class="title">2022年确诊人数变化</div>
     <canvas id="chart" height="50%" width="60%" > 你的浏览器不支持HTML5 canvas </canvas>
 </template>
@@ -14,58 +6,23 @@
 <style>
 .title{
     color:white;
-    font-size:20px;
+    font-size:16px;
     margin-left: 32%;
     margin-top:20px;
     position: absolute;
     top:-6px;
     font-weight:bold;
 }
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropbtn {
-    padding: 5px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 70px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-}
-.dropdown-content button {
-    color: black;
-    padding:6px;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-    text-align:center;
-}
-.dropdown-content button:hover {
-    background-color: #a1c7e1;
-    cursor: pointer;}
-.dropdown:hover .dropdown-content {
-    display: block;
-    z-index: 2;
-}
+
 </style>
 
 <script>
 
 export default {
-props: ['csvdata'],
+props: ['dataArr'],
 data() {
     return{
-        date:["20220131","20220228","20220331","20220430","20220531","20220630","20220731","20220831","20220930",
-        "20221031","20221130","20221231"],
         dataLine:[],
-        mapName:{"Beijing":"北京市","Shanghai":"上海市","Guangdong":"广东市","Chongqing":"重庆市"},
-        displayName:"北京市"
     }
 },
 methods:{
@@ -271,40 +228,20 @@ methods:{
         };
 
     },
-    cityChange(str){
-        //清空
-        this.displayName=this.mapName[str];
-        // console.log(this.mapName);
-        this.dataLine.length=0;
-        var i=0;
-        for(;;i++){
-            if(this.csvdata[i].RegionName==str){
-                break;
-            }
-        }
-        var j=0;
-        for(;;i++){
-            if(this.csvdata[i].Date==this.date[j]){
-                this.dataLine.push(this.csvdata[i].ConfirmedCases);
-                j++;
-                if(j==this.date.length){
-                    break;
-                }
-            }
-        }
-        // console.log(this.dataLine);
-        this.goChart(this.dataLine);
-    }
 },
 mounted(){
     // 装载数据
-    this.cityChange("Beijing");
-    
-    // console.log(this.dataBJ);
-    // console.log(this.csvdata[2228]);
-
-    // var chartData = [["2017/01", 50], ["2017/02", 60], ["2017/03", 100], ["2017/04",200], ["2017/05",350], ["2017/06",600]];
-    
+    this.goChart(this.dataArr);
+    console.log(this.dataLine);
+},
+watch:{
+    dataArr:{
+        handler(newValue){
+            // console.log(newValue);
+        this.goChart(newValue);
+        },
+        deep:true
+    }
 }
 
 }

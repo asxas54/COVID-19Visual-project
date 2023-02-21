@@ -76,7 +76,7 @@ export default {
         ctx_title.beginPath();
         ctx_title.moveTo(canvas_title.width-145, 55+20);
         ctx_title.lineTo(canvas_title.width-115, 55+20);
-        ctx_title.strokeStyle = "#FF6A6A";
+        ctx_title.strokeStyle = "#FF3030";
         ctx_title.lineWidth = 4;
         ctx_title.font = "14px Arial";
         ctx_title.fillText("等级3，完全强制", canvas_title.width-60, 60+20);
@@ -104,7 +104,7 @@ export default {
             return ans;}
         }
 
-        var mapColor={0:"#66CDAA",1:"#FFEC8B",2:"#FF7F24",3:"#FF6A6A"};
+        var mapColor={0:"#66CDAA",1:"#FFEC8B",2:"#FF7F24",3:"#FF3030"};
 
         function drawLine(ctx_school,x1,y1,x2,y2,color){
           ctx_school.beginPath();

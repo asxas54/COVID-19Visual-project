@@ -36,6 +36,7 @@ export default {
   methods:{
     cityChange(str){
         //清空
+        // console.log(this.csvdata);
         this.displayName=this.mapName[str];
         this.dataSc.length=0;
         this.dataBu.length=0;

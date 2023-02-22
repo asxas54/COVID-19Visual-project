@@ -8,7 +8,7 @@
         <PieChart></PieChart>
       </div>
       <div id="middle_up" class="grid">
-        <MapChart></MapChart>
+        <MapChart :ssr="csvdata()"></MapChart>
       </div>
       <div id="right" class="grid">
         <rightPart :csvdata="csvdata()"></rightPart>

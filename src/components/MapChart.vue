@@ -10,13 +10,13 @@
 			<div class="legend5"></div><span class="legenddata">无数据</span><br />
 		</div>
 		<div class="radio">
-			<label><input type="radio" checked name="target" id="target"
+			<label><input type="radio" checked name="target1" id="target1"
 					value="StringencyIndex_Average" />严格指数</label><br />
-			<label><input type="radio" name="target" id="target"
+			<label><input type="radio" name="target1" id="target1"
 					value="GovernmentResponseIndex_Average" />政府响应指数</label><br />
-			<label><input type="radio" name="target" id="target"
+			<label><input type="radio" name="target1" id="target1"
 					value="ContainmentHealthIndex_Average" />遏制和健康指数</label><br />
-			<label><input type="radio" name="target" id="target" value="EconomicSupportIndex" />经济支持指数</label><br />
+			<label><input type="radio" name="target1" id="target1" value="EconomicSupportIndex" />经济支持指数</label><br />
 		</div>
 
 </template>
@@ -245,7 +245,7 @@ window.addEventListener('load', function() {
 			}
 		}
 		//当单选框被点击时,根据所选不同选项呈现不同的数据
-		var radios = document.querySelectorAll("#target");
+		var radios = document.querySelectorAll("#target1");
 		var titleText = document.querySelector("#titleText");
 		for (var q = 0; q < radios.length; q++) {
 			radios[q].addEventListener("click", setvalue)
@@ -433,9 +433,6 @@ window.addEventListener('load', function() {
 				line-height: 20px;
 				text-align: center;
 				font-size: 15px;
-				position: absolute;
-				left: 10px;
-				top: 10px;
 				color: white;
 			}
 

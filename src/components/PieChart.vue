@@ -46,9 +46,9 @@
             #tab {
                 height: 20px;
                 text-align: center;
-                padding-left: 180px;
+                padding-left: 42%;
                 position: absolute;
-                top: 360px;
+                top: 85%;
             }
             #tab li {
                 display: inline-block;
@@ -119,8 +119,8 @@
             this.H *= 2.1;
             this.canvas.width = this.W;
             this.canvas.height = this.H;
-            this.canvas.style.width = this.W / 2.5 + 'px';
-            this.canvas.style.height = this.H / 2.5 + 'px';
+            this.canvas.style.width = this.W / 3 + 'px';
+            this.canvas.style.height = this.H / 3 + 'px';
             this.container.style.position = 'relative';
             this.tip = document.createElement('div');
             this.tip.style.cssText = 'display: none; position: absolute; opacity: 0.5; background: #000; color: #fff; border-radius: 5px; padding: 5px; font-size: 8px; z-index: 99;';
@@ -170,7 +170,7 @@
                 for (var i = 0, item, len = that.legend.length; i < len; i++) {
                     item = that.legend[i];
                     roundRect(ctx, item.x, item.y, item.w, item.h, item.r);
-                    if (ctx.isPointInPath(pos.x * 2, pos.y * 2)) {
+                    if (ctx.isPointInPath(pos.x * 3, pos.y * 3)) {
                         canvas.style.cursor = 'pointer';
                         if (!item.hide) {
                             that.clearGrid(i);
@@ -193,7 +193,7 @@
                     ctx.arc(that.W / 2, that.H / 2, that.H / 3, startAng, startAng + item.ang, false);
                     ctx.closePath();
                     startAng += item.ang;
-                    if (ctx.isPointInPath(pos.x * 2, pos.y * 2)) {
+                    if (ctx.isPointInPath(pos.x * 3, pos.y * 3)) {
                         canvas.style.cursor = 'pointer';
                         that.clearGrid(i);
                         that.showInfo(pos, that.toolTip, [{ name: item.name, num: item.num + ' (' + item.percent + '%)' }]);
@@ -411,7 +411,7 @@
             ctx.fillStyle = '#fff';
             ctx.strokeStyle = 'hsla(0,0%,20%,1)';
             ctx.textBaseLine = 'middle';
-            ctx.font = '25px arial';//左侧标注字大小
+            ctx.font = '30px arial';//左侧标注字大小
     //标题
             ctx.clearRect(0, 0, this.W, this.H);
             if (this.title) {

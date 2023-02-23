@@ -14,7 +14,7 @@
 COVID-19Visual-project/images/下面有一些官方可视化图片
 
 # 初步界面设计
-![初步界面设计](https://github.com/asxas54/COVID-19Visual-project/blob/main/images/%E5%9B%BE%E7%89%877.png "初步界面设计")
+![初步界面设计](https://github.com/asxas54/COVID-19Visual-project/blob/LineChartZ+/images/%E5%9B%BE%E7%89%877.png "初步界面设计")
 ## 全国地图 
 确定一个时间节点，比如2022年6月1日 2022年12月1日，标注全国各省的以下指标
 - StringencyIndex_Average 严格指数
@@ -43,9 +43,9 @@ C2M_Workplace closing
 4. 要求除基本工作场所（如杂货店、医生）外的所有工作场所关闭（或在家工作）
 时间轴参考效果
 
-![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/main/images/%E5%9B%BE%E7%89%874.png "时间轴参考效果")
+![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/LineChartZ+/images/%E5%9B%BE%E7%89%874.png "时间轴参考效果")
 
-![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/main/images/%E5%9B%BE%E7%89%875.png "时间轴参考效果")
+![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/LineChartZ+/images/%E5%9B%BE%E7%89%875.png "时间轴参考效果")
 
 ## 折线图
 与时间轴图表 城市相对应
@@ -60,9 +60,9 @@ ConfirmedCases 确认感染人数
 确诊人数和政府响应人数之间的散点图
 参考官方图表
 
-![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/main/images/%E5%9B%BE%E7%89%876.png  "时间轴参考效果")
+![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/LineChartZ+/images/%E5%9B%BE%E7%89%876.png  "时间轴参考效果")
 # 参考页面
 
-![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/main/images/%E5%9B%BE%E7%89%872.png  "时间轴参考效果")
+![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/LineChartZ+/images/%E5%9B%BE%E7%89%872.png  "时间轴参考效果")
 
-![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/main/images/%E5%9B%BE%E7%89%873.png  "时间轴参考效果")
+![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/LineChartZ+/images/%E5%9B%BE%E7%89%873.png  "时间轴参考效果")

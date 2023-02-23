@@ -218,4 +218,3 @@ function addData() {
 // 每隔24小时执行一次添加散点数据的操作
 setInterval(addData, 24 * 60 * 60 * 1000);
 </script>
-<script src="https://d3js.org/d3.v5.min.js"></script>

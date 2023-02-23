@@ -44,25 +44,9 @@ function mapchar(mapchar) {
 	canvas.style.height = 500 + "px";
 	ctx.scale(2, 2);
 	var scale;
-	
 	var titleText = "严格指数"; //标题,默认为严格指数
 	var dateNum = "20200101" //日期数字,默认为20200101
-	//==================解析csv文件=======================
-	$.ajax({
-		type: 'GET',
-		url: "src/data/OxCGRT_CHN_latest - 2-6.csv",
-		dataType: 'text',
-		// async: false,
-		success: function(data) {
-			jsonData = $.csv.toObjects(data);
-			// console.log(jsonData);
-		},
-		error: function(e) {
-			alert('An error occurred while processing API calls');
-			console.log("API call Failed: ", e);
-		},
-	});
-	//保证在绘制地图之前拿到csv文件数据
+
 	init()
 
 	function init() {
@@ -249,7 +233,7 @@ function mapchar(mapchar) {
 		}
 	}
 	//当单选框被点击时,根据所选不同选项呈现不同的数据
-	var radios = document.querySelectorAll("#target");
+	var radios = document.querySelectorAll("#target1");
 	var titleText = document.querySelector("#titleText");
 	for (var q = 0; q < radios.length; q++) {
 		radios[q].addEventListener("click", setvalue)
@@ -371,19 +355,24 @@ function mapchar(mapchar) {
 </script>
 
 <style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
    	.mapchar {
 				display: inline-block;
 				width: 640px;
-				height: 500px;
-				position: relative;
+				height: 470px;
+				position: absolute;
+				top: 10px;
 			}
 
 			.legend {
-				width: 110px;
-				height: 105px;
-				position: absolute;
-                top: 200px;
-                left: 3px;
+				    width: 110px;
+				    height: 105px;
+				    position: absolute;
+				    top: 200px;
+				    left: 3px;
 			}
 
 			.legend>.legend1,
@@ -423,13 +412,13 @@ function mapchar(mapchar) {
 			}
 
 			.radio {
-				font-size: 12px;
-				color: white;
-				font-family: "微软雅黑";
-				position: absolute;
-                line-height: 18px;
-                left: 69px;
-                top: 225px;
+				    font-size: 12px;
+				    color: white;
+				    font-family: "微软雅黑";
+				    position: absolute;
+				    line-height: 20px;
+				    left: 70px;
+				    top: 246px;
 			}
 
 			.maptitle {

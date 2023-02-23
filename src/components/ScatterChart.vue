@@ -1,6 +1,6 @@
 <template>
 	<div style="width: 480px; height:393px;">
-		<h3 style="text-align: center;">2022年全国各省政府响应指数和确诊人数的关系</h3>
+		<h3 style="text-align: left;">2022年全国各省政府响应指数和确诊人数的关系</h3>
 		<div id="scatterPlot" style="width: 100%; height: 300px;">
 			<!-- 定义散点图的容器 -->
 			<div id="scatter-plot-container"></div>
@@ -20,14 +20,13 @@
 	text {
 		fill: white
 	}
-
 	/* 定义散点图容器的样式 */
 	#scatter-plot-container {
 		margin: 0 auto;
 	}
-
-
 	h3 {
+		margin-left: 5px;
+		font-size:10px;
 		color: #ffffff;
 	}
 
@@ -166,8 +165,8 @@
 			bottom: 30,
 			left: 40
 		},
-		width = 478 - margin.left - margin.right,
-		height = 300 - margin.top - margin.bottom;
+		width = 350 - margin.left - margin.right,
+		height = 250 - margin.top - margin.bottom;
 	// 定义x轴比例尺
 	var x = d3.scaleLinear().range([0, width]);
 	var ctx;

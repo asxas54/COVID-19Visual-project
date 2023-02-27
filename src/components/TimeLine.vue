@@ -28,10 +28,11 @@ export default {
                 ctx_title.msBackingStorePixelRatio ||
                 ctx_title.oBackingStorePixelRatio ||
                 ctx_title.backingStorePixelRatio || 1;
+            console.log(devicePixelRatio / backingStoreRatio);
             return (devicePixelRatio / backingStoreRatio);
         };
 
-        var radio = getPixelRatio(ctx_title);
+        var radio = 1;//getPixelRatio(ctx_title);
         // console.log(radio);
         canvas_title.style.width = canvas_title.width + 'px';
         canvas_title.style.height = canvas_title.height + 'px';

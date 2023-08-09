@@ -61,7 +61,7 @@ ConfirmedCases 确认感染人数
 参考官方图表
 
 ![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/LineChartZ+/images/%E5%9B%BE%E7%89%876.png  "时间轴参考效果")
-# 参考页面
+# 项目参考页面
 
 ![时间轴参考效果](https://github.com/asxas54/COVID-19Visual-project/blob/LineChartZ+/images/%E5%9B%BE%E7%89%872.png  "时间轴参考效果")
 
